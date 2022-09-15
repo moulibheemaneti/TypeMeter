@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.type_meter">
+    package="com.moulibheemaneti.type_meter">
    <application
-        android:label="type_meter"
+        android:label="Type Meter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
