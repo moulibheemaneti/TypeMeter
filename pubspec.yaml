@@ -4,7 +4,7 @@ description: A new Flutter project to calculate your typing speed.
 
 publish_to: "none"
 
-version: 1.0.0+0
+version: 1.0.1+1
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
@@ -16,14 +16,26 @@ dependencies:
   # For state management
   get: ^4.6.5
 
+  # Share the link of app.
+  share_plus: ^5.0.0
+
+  # To launch website in device browser.
+  url_launcher: ^6.1.6
+
 dev_dependencies:
-  flutter_lints: ^2.0.0
   flutter_launcher_icons: "^0.10.0"
+  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/fonts/
+  
+  fonts:
+    - family:  TMIcons
+      fonts:
+        - asset: assets/fonts/TMIcons.ttf
 
 flutter_icons:
   android: "launcher_icon"

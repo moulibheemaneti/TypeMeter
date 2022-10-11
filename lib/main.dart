@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'modules/word_count/views/word_count_view.dart';
+import 'modules/home/views/home_screen.dart';
+import 'routes/routes.dart';
 
 /// Entry point of the app.
 void main() {
@@ -15,10 +16,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Type Meter',
-      home: WordCountPage(),
+      onGenerateRoute: RouteGenerator.generateRoute,
+      home: HomeScreen(),
     );
   }
 }

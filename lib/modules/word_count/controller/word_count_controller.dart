@@ -27,7 +27,8 @@ class WordCountController extends GetxController {
       characterCount = 0;
       return;
     }
-    var temp = finalText.trim().length;
+    RegExp regex = RegExp('\\s+');
+    var temp = finalText.trim().replaceAll(regex, '').length;
     characterCount = temp;
   }
 
