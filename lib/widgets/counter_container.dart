@@ -29,7 +29,7 @@ class CounterContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: ColorPalette.yellow,
         border: Border.all(
-          color: ColorPalette.darkYellow,
+          color: ColorPalette.orange,
           width: 3,
         ),
         borderRadius: const BorderRadius.all(

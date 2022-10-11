@@ -55,7 +55,7 @@ void showOkDialog({String? title, String? description}) {
                   foregroundColor: Colors.white,
                 ),
                 child: const Text("OK"),
-              )
+              ),
             ],
           ),
         ),

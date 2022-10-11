@@ -72,7 +72,7 @@ class WordCountPage extends StatelessWidget {
                     ),
                     focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: ColorPalette.darkYellow,
+                        color: ColorPalette.orange,
                       ),
                     ),
                   ),
@@ -90,7 +90,7 @@ class WordCountPage extends StatelessWidget {
                   child: const Text(
                     "Clear Text",
                     style: TextStyle(
-                      color: ColorPalette.darkYellow,
+                      color: ColorPalette.orange,
                     ),
                   ),
                 ),

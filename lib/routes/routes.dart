@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../modules/home/views/home_screen.dart';
 import '../modules/not_found_screen.dart';
-import '../modules/type_speed/type_speed_screen.dart';
+import '../modules/type_speed/views/type_speed_screen.dart';
 import '../modules/word_count/views/word_count_screen.dart';
 import '../routes/pages.dart';
 

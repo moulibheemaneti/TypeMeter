@@ -11,10 +11,10 @@ class CustomAppBar extends AppBar {
           key: key,
           elevation: 0,
           backgroundColor: Colors.white,
-          foregroundColor: ColorPalette.yellow,
+          foregroundColor: ColorPalette.orange,
           title: Text(title ?? "Type Meter"),
           titleTextStyle: Get.textTheme.headline4?.copyWith(
-            color: ColorPalette.yellow,
+            color: ColorPalette.orange,
             fontWeight: FontWeight.bold,
           ),
           centerTitle: true,

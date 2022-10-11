@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:type_meter/modules/type_speed/views/type_speed_screen.dart';
 
 import 'modules/home/views/home_screen.dart';
 import 'routes/routes.dart';
@@ -16,11 +17,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Type Meter',
       onGenerateRoute: RouteGenerator.generateRoute,
-      home: HomeScreen(),
+      // home: HomeScreen(),
+      home: TypeSpeedScreen(),
     );
   }
 }
