@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:type_meter/extensions/integer_extensions.dart';
+
+import '../../../extensions/integer_extensions.dart';
 
 String correct = "correct";
 String wrong = "wrong";
@@ -97,7 +98,12 @@ class TypeSpeedController extends GetxController {
   }
 
   int calculateWPM(int charactersEntered, int timeTaken) {
-    return (charactersEntered / 5) ~/ timeTaken;
+    try {
+      var res = (charactersEntered / 5) ~/ timeTaken;
+      return res;
+    } catch (e) {
+      return 0;
+    }
   }
 
   void statsReset() {
