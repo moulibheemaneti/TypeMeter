@@ -1,16 +1,17 @@
-# type_meter
+# BMI Calculator
 
-A new Flutter project.
+<img src = "assets/logo.png" width="256px" style="display: block;
+  margin-left: auto;
+  margin-right: auto;">
 
-## Getting Started
+## Introduction
 
-This project is a starting point for a Flutter application.
+A basic <strong>Type Meter</strong> app in flutter. This app allows you to calculate your typing speed and also lets you to count the number words and characters in your text.
 
-A few resources to get you started if this is your first Flutter project:
+## Statemanagement
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+For state management and dependency injection, this app uses [GetX flutter package](https://pub.dev/packages/get).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Available on
+
+- ### [Playstore](https://play.google.com/store/apps/details?id=com.moulibheemaneti.type_meter)
