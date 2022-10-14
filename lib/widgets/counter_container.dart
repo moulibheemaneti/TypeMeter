@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:type_meter/theme/color_palette.dart';
+
+import '../theme/color_palette.dart';
 
 /// Counter Container has a title with the small text size and
 /// counter value in bold font to emphasize the count value of a particular attribute.

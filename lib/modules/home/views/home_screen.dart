@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:type_meter/theme/color_palette.dart';
-import 'package:type_meter/utilities/constant_links.dart';
-import 'package:type_meter/utilities/launch_urls.dart';
-import 'package:type_meter/utilities/tm_icons.dart';
 
+import '../../../theme/color_palette.dart';
+import '../../../utilities/constant_links.dart';
+import '../../../utilities/launch_urls.dart';
+import '../../../utilities/tm_icons.dart';
 import '../../../widgets/custom_drawer.dart';
 
 const String homePara1 = '''

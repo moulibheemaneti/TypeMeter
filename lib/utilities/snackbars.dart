@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:type_meter/theme/color_palette.dart';
+
+import '../theme/color_palette.dart';
 
 void showSnackBar(String title, String description) {
   Get.closeAllSnackbars();

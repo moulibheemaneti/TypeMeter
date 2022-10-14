@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -36,6 +38,27 @@ class TypeSpeedController extends GetxController {
     totalCharacters: 0,
     typedCharacters: 0,
   };
+
+  final _secondsElapsed = 0.obs;
+  int get secondsElapsed => _secondsElapsed.value;
+  set secondsElapsed(int val) {
+    _secondsElapsed.value = val;
+  }
+
+  void onStartGameTapped() {
+    hasGameStarted = true;
+    isTextFieldEnabled = true;
+    secondsElapsed = 0;
+    Timer.periodic(
+      const Duration(seconds: 1),
+      (timer) {
+        secondsElapsed += 1;
+        print(secondsElapsed);
+        if (!hasGameStarted) timer.cancel();
+      },
+    );
+    showStats = false;
+  }
 
   void onEndGameTapped() {
     isTextFieldEnabled = false;

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:type_meter/modules/type_speed/views/type_speed_screen.dart';
 
-import 'modules/home/views/home_screen.dart';
+import 'modules/type_speed/views/type_speed_screen.dart';
 import 'routes/routes.dart';
 
 /// Entry point of the app.
