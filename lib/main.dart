@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Type Meter',
       onGenerateRoute: RouteGenerator.generateRoute,
-      // home: HomeScreen(),
       home: TypeSpeedScreen(),
     );
   }

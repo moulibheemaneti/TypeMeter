@@ -19,7 +19,7 @@ class CustomDrawer extends StatelessWidget {
           DrawerHeader(
             child: Image.asset('assets/logo.png'),
           ),
-          _listTile(title: 'Home', route: Routes.home),
+          _listTile(title: 'About The App', route: Routes.about),
           _listTile(title: 'Word Count', route: Routes.wordCountPage),
           _listTile(title: 'Type Speed', route: Routes.typeSpeed),
           _listTile(

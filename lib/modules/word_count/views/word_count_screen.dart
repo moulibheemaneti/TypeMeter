@@ -21,7 +21,7 @@ class WordCountPage extends StatelessWidget {
     final size = mq.size;
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       appBar: CustomAppBar(title: "Word Count"),
       body: SingleChildScrollView(
         child: Padding(

@@ -2,11 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:type_meter/extensions/integer_extensions.dart';
 
 String correct = "correct";
 String wrong = "wrong";
 String totalCharacters = "total_characters";
 String typedCharacters = "typed_characters";
+String timeTaken = "time_taken";
+String wordsPerMinute = "words_per_minute";
+String accuracy = "accuracy";
 
 class TypeSpeedController extends GetxController {
   String textToType =
@@ -37,6 +41,9 @@ class TypeSpeedController extends GetxController {
     wrong: 0,
     totalCharacters: 0,
     typedCharacters: 0,
+    timeTaken: "0",
+    accuracy: "0 %",
+    wordsPerMinute: 0,
   };
 
   final _secondsElapsed = 0.obs;
@@ -52,9 +59,11 @@ class TypeSpeedController extends GetxController {
     Timer.periodic(
       const Duration(seconds: 1),
       (timer) {
+        if (!hasGameStarted) {
+          timer.cancel();
+          return;
+        }
         secondsElapsed += 1;
-        print(secondsElapsed);
-        if (!hasGameStarted) timer.cancel();
       },
     );
     showStats = false;
@@ -70,16 +79,25 @@ class TypeSpeedController extends GetxController {
 
     for (int i = 0; i < num; i++) {
       if (textToConsider[i] == textToType[i]) {
-        stats[correct] = stats[correct]! + 1;
+        stats[correct] = (stats[correct] as int) + 1;
       } else {
-        stats[wrong] = stats[wrong]! + 1;
+        stats[wrong] = (stats[wrong] as int) + 1;
       }
     }
 
     stats[totalCharacters] = textToType.length;
     stats[typedCharacters] = textToConsider.length;
+    stats[timeTaken] =
+        "${secondsElapsed.toMinutesString()}:${secondsElapsed.toSecondsString()}";
+    stats[accuracy] =
+        "${(((stats[correct] as int) / textToType.length) * 100).toPrecision(2)} %";
 
+    stats[wordsPerMinute] = calculateWPM(textToType.length, secondsElapsed);
     showStats = true;
+  }
+
+  int calculateWPM(int charactersEntered, int timeTaken) {
+    return (charactersEntered / 5) ~/ timeTaken;
   }
 
   void statsReset() {
@@ -87,6 +105,7 @@ class TypeSpeedController extends GetxController {
     stats[wrong] = 0;
     stats[totalCharacters] = 0;
     stats[typedCharacters] = 0;
+    stats[timeTaken] = 0;
   }
 
   void onResetGameTapped() {
@@ -94,5 +113,7 @@ class TypeSpeedController extends GetxController {
     hasGameStarted = false;
     showStats = false;
     statsReset();
+    secondsElapsed = 0;
+    textController.clear();
   }
 }

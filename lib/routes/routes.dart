@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../modules/home/views/home_screen.dart';
+import '../modules/about_screen.dart';
 import '../modules/not_found_screen.dart';
 import '../modules/type_speed/views/type_speed_screen.dart';
 import '../modules/word_count/views/word_count_screen.dart';
@@ -13,10 +13,10 @@ class RouteGenerator {
     RouteSettings settings,
   ) {
     switch (settings.name) {
-      case Routes.home:
+      case Routes.about:
         return GetPageRoute(
-          routeName: Routes.home,
-          page: () => HomeScreen(),
+          routeName: Routes.about,
+          page: () => const AboutScreen(),
           settings: settings,
         );
       case Routes.wordCountPage:

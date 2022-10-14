@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../extensions/integer_extensions.dart';
 import '../../../theme/color_palette.dart';
+import '../../../widgets/counter_container.dart';
 import '../../../widgets/custom_appbar.dart';
 import '../../../widgets/custom_drawer.dart';
 import '../../../widgets/type_speed_report.dart';
@@ -25,6 +27,7 @@ class TypeSpeedScreen extends StatelessWidget {
             vertical: 32,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
                 decoration: const BoxDecoration(
@@ -48,7 +51,6 @@ class TypeSpeedScreen extends StatelessWidget {
                     const SizedBox(height: 16),
                     Text(
                       typeSpeedController.textToType,
-                      textAlign: TextAlign.justify,
                       style: Get.textTheme.bodyText2?.copyWith(
                         color: Colors.white,
                       ),
@@ -97,6 +99,7 @@ class TypeSpeedScreen extends StatelessWidget {
                   );
                 }
               }),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: typeSpeedController.onEndGameTapped,
                 style: ElevatedButton.styleFrom(
@@ -106,6 +109,7 @@ class TypeSpeedScreen extends StatelessWidget {
                 ),
                 child: const Text("End Game"),
               ),
+              const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: typeSpeedController.onResetGameTapped,
                 style: ElevatedButton.styleFrom(
@@ -115,13 +119,36 @@ class TypeSpeedScreen extends StatelessWidget {
                 ),
                 child: const Text("Reset Game"),
               ),
+              const SizedBox(height: 16),
               Obx(() {
                 if (typeSpeedController.showStats) {
-                  //TODO: Add stats table here.
                   return TypeSpeedReport(dataMap: typeSpeedController.stats);
                 } else {
-                  return Text(
-                      "Seconds Elapsed: ${typeSpeedController.secondsElapsed}");
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: Obx(() {
+                          return CounterContainer(
+                            title: "Minutes Elapsed",
+                            counter: typeSpeedController.secondsElapsed
+                                .toMinutesString(),
+                          );
+                        }),
+                      ),
+                      SizedBox(width: Get.size.width * 0.05),
+                      Expanded(
+                        child: Obx(() {
+                          return CounterContainer(
+                            title: "Seconds Elapsed",
+                            counter: typeSpeedController.secondsElapsed
+                                .toSecondsString(),
+                          );
+                        }),
+                      ),
+                    ],
+                  );
+                  // return Text(
+                  //     "Seconds Elapsed: ${typeSpeedController.secondsElapsed}");
                 }
               }),
             ],

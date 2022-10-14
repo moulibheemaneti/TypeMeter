@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:type_meter/widgets/custom_appbar.dart';
 
 import '../../../theme/color_palette.dart';
 import '../../../utilities/constant_links.dart';
@@ -7,29 +8,19 @@ import '../../../utilities/launch_urls.dart';
 import '../../../utilities/tm_icons.dart';
 import '../../../widgets/custom_drawer.dart';
 
-const String homePara1 = '''
+const String aboutPara1 = '''
 Type Meter is a open source flutter app developed by "Mouli Bheemaneti". This app can be used to count the number of characters in the text.
 ''';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class AboutScreen extends StatelessWidget {
+  const AboutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        foregroundColor: ColorPalette.yellow,
-        title: const Text("Type Meter"),
-        titleTextStyle: Theme.of(context).textTheme.headline4?.copyWith(
-              color: ColorPalette.yellow,
-              fontWeight: FontWeight.bold,
-            ),
-        centerTitle: true,
-      ),
-      drawer: CustomDrawer(),
+      appBar: CustomAppBar(),
+      drawer: const CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
         child: Column(
@@ -48,7 +39,7 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             const Text(
-              homePara1,
+              aboutPara1,
               textAlign: TextAlign.justify,
             ),
             const SizedBox(height: 16),
@@ -78,8 +69,15 @@ class HomeScreen extends StatelessWidget {
         horizontal: 16,
         vertical: 16,
       ),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: ColorPalette.yellow,
+        border: Border.all(
+          color: ColorPalette.orange,
+          width: 3,
+        ),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(8),
+        ),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
