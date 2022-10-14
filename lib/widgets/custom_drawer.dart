@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../routes/pages.dart';
 import '../theme/color_palette.dart';
 import '../utilities/constant_links.dart';
 import '../utilities/launch_urls.dart';
-import '../utilities/snackbars.dart';
 
 /// Drawer for the application
 class CustomDrawer extends StatelessWidget {
@@ -21,7 +19,7 @@ class CustomDrawer extends StatelessWidget {
           DrawerHeader(
             child: Image.asset('assets/logo.png'),
           ),
-          _listTile(title: 'Home', route: Routes.home),
+          _listTile(title: 'About The App', route: Routes.about),
           _listTile(title: 'Word Count', route: Routes.wordCountPage),
           _listTile(title: 'Type Speed', route: Routes.typeSpeed),
           _listTile(
@@ -50,7 +48,7 @@ class CustomDrawer extends StatelessWidget {
       title: Text(
         title,
         style: const TextStyle(
-          color: ColorPalette.yellow,
+          color: ColorPalette.orange,
         ),
       ),
       onTap: () async {

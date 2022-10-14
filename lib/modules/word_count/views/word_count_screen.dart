@@ -21,7 +21,7 @@ class WordCountPage extends StatelessWidget {
     final size = mq.size;
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       appBar: CustomAppBar(title: "Word Count"),
       body: SingleChildScrollView(
         child: Padding(
@@ -72,7 +72,7 @@ class WordCountPage extends StatelessWidget {
                     ),
                     focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: ColorPalette.darkYellow,
+                        color: ColorPalette.orange,
                       ),
                     ),
                   ),
@@ -90,7 +90,7 @@ class WordCountPage extends StatelessWidget {
                   child: const Text(
                     "Clear Text",
                     style: TextStyle(
-                      color: ColorPalette.darkYellow,
+                      color: ColorPalette.orange,
                     ),
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:type_meter/theme/color_palette.dart';
+
+import '../theme/color_palette.dart';
 
 /// Counter Container has a title with the small text size and
 /// counter value in bold font to emphasize the count value of a particular attribute.
@@ -29,7 +30,7 @@ class CounterContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: ColorPalette.yellow,
         border: Border.all(
-          color: ColorPalette.darkYellow,
+          color: ColorPalette.orange,
           width: 3,
         ),
         borderRadius: const BorderRadius.all(
